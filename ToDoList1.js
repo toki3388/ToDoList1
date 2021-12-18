@@ -25,5 +25,6 @@ add.addEventListener('click', function(){
     }
 
     table.append(tr); //tr要素をtable要素に追加
+    
 });
 
