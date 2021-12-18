@@ -1,7 +1,7 @@
 'use strict';
 
-const todo = document.getElementById('todo'); //入力されるタスク
-const deadline = document.querySelector('input[type="date"]'); //日付の入力
+const todo = document.getElementById('todo'); //タスク
+const deadline = document.querySelector('input[type="date"]'); //日付
 const add = document.getElementById('add'); //追加ボタン
 const table = document.getElementById('table'); //表
 
@@ -25,13 +25,5 @@ add.addEventListener('click', function(){
     }
 
     table.append(tr); //tr要素をtable要素に追加
-
-    /*if(deadline.value !=''){
-        item.deadline = deadline.value;
-    }else{
-        item.deadline = new Date().toLocaleString()
-        //window.alert('期日を入力してください');
-        //return;
-    }*/
 });
 
