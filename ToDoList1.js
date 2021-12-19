@@ -6,25 +6,25 @@ const add = document.getElementById('add'); //追加ボタン
 const table = document.getElementById('table'); //表
 
 add.addEventListener('click', function(){
-    const item = {}; //入力した値を格納するオブジェクト
+    const item = {};
 
-    item.todo = todo.value; //オブジェクト名.プロパティ名
-    item.deadline = deadline.value; //オブジェクト名.プロパティ名
+    item.todo = todo.value; 
+    item.deadline = deadline.value; 
 
-    todo.value = ''; //フォームをリセットする
-    deadline.value = ''; //フォームのリセット
+    todo.value = '';
+    deadline.value = ''; 
 
-    console.log(item); //サイトを右クリックして検証で確認できる
+    console.log(item); 
 
-　　const tr = document.createElement('tr'); //tr(表)要素の作成
+　　const tr = document.createElement('tr'); 
 
 　　for (const prop in item){                     //propはプロパティ名
         const td = document.createElement('td');
-        td.textContent = item[prop]; //tdの内容を[prop](プロパティ名)に入れる
-        tr.appendChild(td); //td要素をtr要素に追加
+        td.textContent = item[prop]; 
+        tr.appendChild(td); 
     }
 
-    table.append(tr); //tr要素をtable要素に追加
+    table.append(tr); 
     
 });
 
