@@ -11,20 +11,23 @@ add.addEventListener('click', function(){
     item.todo = todo.value; 
     item.deadline = deadline.value; 
 
-    todo.value = '';
-    deadline.value = ''; 
+    /*todo.value = '';
+    deadline.value = ''; */
 
-    console.log(item); 
+    if(todo.value != '' && deadline.value != ''){
+　　    const tr = document.createElement('tr'); 
 
-　　const tr = document.createElement('tr'); 
+　　    for (const prop in item){                     //propはプロパティ名
+            const td = document.createElement('td');
+            td.textContent = item[prop]; 
+            tr.appendChild(td); 
+        }
 
-　　for (const prop in item){                     //propはプロパティ名
-        const td = document.createElement('td');
-        td.textContent = item[prop]; 
-        tr.appendChild(td); 
+        table.append(tr); 
+    }else{
+        window.alert('タスクと期日を入力してください')
+        return;
     }
-
-    table.append(tr); 
     
 });
 
