@@ -19,8 +19,19 @@ div#select{
     border-collapse: collapse;
     padding: 1px; 
     background-color: white;
-    height: 130px;
+    height: 150px;
 }
+
+input::placeholder{
+    font-size: x-small;
+}
+
+/*form#limit{
+    text-align: left;
+    margin-left: 11rem;
+    margin-top: 5px;
+    font-size: small;
+}*/
 
 div#decide{
     border: solid 2px;
