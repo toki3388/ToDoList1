@@ -5,7 +5,7 @@ const deadline = document.querySelector('input[type="date"]');  //日付
 const add = document.getElementById('add'); //追加ボタン
 const table = document.getElementById('table'); //表
 
-add.addEventListener('click', function(){
+add.addEventListener('click', () => {
     const item = {};
 
     item.todo = todo.value; 
