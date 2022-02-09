@@ -44,6 +44,7 @@ input::placeholder{
     color: white;
     border-style: ridge;
     border-color: rgb(185, 176, 176);
+    cursor: pointer;
 }
 
 #delete{
@@ -52,6 +53,7 @@ input::placeholder{
     border-style: ridge;
     border-color: rgb(185, 176, 176);
     margin: 3px 5px 3px;
+    cursor: pointer;
 }
 
 table{
