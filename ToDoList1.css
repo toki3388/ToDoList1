@@ -24,19 +24,17 @@ input::placeholder{
     font-size: x-small;
 }
 
-#decide{
-    border: solid 2px;
-    border-collapse: collapse;
-    margin-top: 2rem;
-    background-color: white;
-    padding-bottom: 2rem;
-}
-
 #select,#decide{
     text-align: center;
     width: 55%;
     margin-left: auto;
     margin-right: auto;
+}
+
+#decide{
+    border-style: solid;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 #add{
@@ -56,30 +54,26 @@ input::placeholder{
     cursor: pointer;
 }
 
-table{
-    margin: auto; /*表を真ん中に置く*/
-    /*border: solid 0.5px;
-    border-collapse: collapse;*/
-    padding-bottom: 3px;
+#labelElement{
+    display: block;
+    border-style: groove;
+    position: relative;
+    width: 36rem;
+    margin-bottom: 1rem;
+    height: 2rem;
+    text-align: left;
+    text-align: center;
+    margin: 1rem auto;
+    line-height: 2rem; /*height: 2rem;の高さの中で中央にする*/
 }
 
-th{ 
-    padding: 2px 30px; /*上下 左右*/
-    background-color: rgb(239, 252, 65);
-    font-size: 20px;
-    border: solid 2px lightgray;
-    border-collapse: collapse;
-    color: black;
+#checkBox{
+    position: absolute;
+    left: 0;
+    margin-top: 9px;
 }
 
-#todoLabel{
-    color: black;
-    padding: 2px 12rem;
-}
-
-td{
-    border: solid 2px lightgray;
-    border-collapse: collapse;
-    padding-top: 4px;
-    border-width: 0.8px 0.4px 0.4px 0.8px;
+#delete{
+    position: absolute;
+    right: 0;
 }
