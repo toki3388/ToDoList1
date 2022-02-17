@@ -35,6 +35,6 @@ add.addEventListener('click', () => {
             taskList.removeChild(chosenTask);
         };
     }else{
-        window.alert('タスクを入力してください')
+        window.alert('タスクを入力してください');
     }
 });
