@@ -1,43 +1,40 @@
 const todo = document.getElementById('todo');   //タスク
-const deadline = document.querySelector('input[type="date"]');  //日付
+const submitTime = document.getElementById('submitDate');  //日付
 const add = document.getElementById('add'); //追加ボタン
-const table = document.getElementById('table'); //表
+const taskList = document.getElementById('taskList');
 
 add.addEventListener('click', () => {
     const item = {};
 
-    item.todo = todo.value; 
-    item.deadline = deadline.value; 
-
-    if(todo.value != '' && deadline.value != ''){
+    if(todo.value.trim() !== ''){ //trim()は前後の空白を示す
         item.todo = todo.value;
-        item.deadline = deadline.value; 
+        todo.value = ''; //タスクを追加すると同時にラベル内を空にする
 
-        const tr = document.createElement('tr'); 
         const remove = document.createElement('button');
         remove.id = 'delete'; //removeのid名を作成
 
         for (const prop in item){                     //propはプロパティ名
-            const td = document.createElement('td');
-            td.textContent = item[prop]; 
+            const label = document.createElement('label');
+            label.id = 'labelElement';
+            const input = document.createElement('input');
+            input.type = 'checkbox';
+            input.id = 'checkBox';
+            label.textContent = item[prop]; 
             remove.textContent = '削除';
-            tr.appendChild(td);
-            tr.appendChild(remove); 
+            label.appendChild(input);
+            label.appendChild(remove);
+            taskList.appendChild(label);
         }
-
-        table.append(tr);
-
-        tr.appendChild(remove);
 
         remove.addEventListener('click', () => {
             removeTask(remove);
         });
 
         const removeTask = (remove) => {
-            const chosenTask = remove.closest('tr');
-            table.removeChild(chosenTask);
+            const chosenTask = remove.closest('label');
+            taskList.removeChild(chosenTask);
         };
     }else{
-        window.alert('タスクと期日を入力してください')
+        window.alert('タスクを入力してください')
     }
 });
