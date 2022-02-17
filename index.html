@@ -2,6 +2,7 @@
 <html lang='ja'>
     <head>
         <meta charset='UTF-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ToDoリスト</title>
         <link rel='stylesheet' href='ToDoList1.css'>
     </head>
@@ -11,21 +12,15 @@
 
         <div id='select'>
             <h2 class='entrance'>タスクの入力</h2>
-            <label>タスク：<input id='todo' maxlength='20' placeholder='20文字以内で入力してください'></label>
-            <label>期限：<input type='date'></label>
+            <label>タスク：<input id='todo' type='text' maxlength='20' placeholder='20文字以内で入力してください'></label>
+            <!--<label>期限：<input id='submitDate' type='date'></label>-->
             <button id='add'>追加</button><br>
         </div>
 
         <div id='decide'>
             <h2>追加されたタスク</h2>
 
-            <table id='table'>
-                <tr>
-                    <th id="todoLabel">タスク</th>
-                    <th id="dateLabel">期限</th>
-                </tr>
-            
-            </table>
+            <div id="taskList"></div>
         </div>
 
         <script src='ToDoList1.js'></script>
