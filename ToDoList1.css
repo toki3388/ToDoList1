@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 h1{
     font-size: 50px;
     padding-top: 1rem;
@@ -12,14 +14,6 @@ label{
     padding-right: 2rem;
 }
 
-#select{
-    border: solid 2px;
-    border-collapse: collapse;
-    padding: 1px; 
-    background-color: white;
-    height: 150px;
-}
-
 input::placeholder{
     font-size: x-small;
 }
@@ -31,7 +25,25 @@ input::placeholder{
     margin-right: auto;
 }
 
+#select{
+    border: solid 2px;
+    border-collapse: collapse;
+    padding: 1px; 
+    background-color: white;
+    height: 150px;
+}
+
 #decide{
+    border-style: solid;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+#favorite{
+    text-align: center;
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
     border-style: solid;
     margin-top: 2rem;
     padding-bottom: 2rem;
