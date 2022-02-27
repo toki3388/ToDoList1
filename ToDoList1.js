@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (json == undefined) {
     return;
   }
-  list = JSON.parse(json);
+  list = JSON.parse(json);      //json = storage.TodoList をjavascriptオブジェクトに変換
   for (const item of list) {
     addItem(item);
   }
@@ -35,6 +35,17 @@ const addItem = (item) => {
         label.appendChild(remove);
         taskList.appendChild(label);
     }
+
+    remove.addEventListener('click', (index) => {
+        removeTask(remove);
+        list.splice(index,1);       //リスト内の[1]の位置にある要素を一つ削除
+        storage.TodoList = JSON.stringify(list);   //listをjson文字列に変換
+    });
+
+    const removeTask = (removal) => {
+        const chosenTask = removal.closest('label');
+        taskList.removeChild(chosenTask);
+    };
 };
 
 add.addEventListener('click', () => {
@@ -44,8 +55,8 @@ add.addEventListener('click', () => {
         item.todo = todo.value;
         todo.value = ''; //タスクを追加すると同時にラベル内を空にする
 
-        const remove = document.createElement('button');
-        remove.id = 'delete';
+        /*const remove = document.createElement('button');
+        remove.id = 'delete';*/
 
         addItem(item);
 
@@ -79,16 +90,17 @@ add.addEventListener('click', () => {
             favorite.appendChild(selectTask);
         };*/
 
-        remove.addEventListener('click', () => {
+        /*remove.addEventListener('click', () => {
             removeTask(remove);
         });
 
         const removeTask = (removal) => {
             const chosenTask = removal.closest('label');
             taskList.removeChild(chosenTask);
-        };
+        };*/
 
     }else{
         window.alert('タスクを入力してください');
+        todo.value = '';
     }
 });
